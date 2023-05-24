@@ -1,2 +1,2 @@
 # TicketBusOnline
-Repo destinado al proyecto creado en la materia Programación 2 de la Universidad de Mendoza
+Repo for the project created in the subject Programming 2 of the Universidad de Mendoza
