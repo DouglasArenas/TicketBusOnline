@@ -1,26 +1,14 @@
-package com.GoTicket.GoTicket.models;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "bookings")
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_booking")
-    private Long idBooking;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
@@ -34,14 +22,6 @@ public class Booking {
 
     @Column(name = "booking_status")
     private String bookingStatus;
-
-    public Long getIdBooking() {
-        return idBooking;
-    }
-
-    public void setIdBooking(Long idBooking) {
-        this.idBooking = idBooking;
-    }
 
     public Trip getTrip() {
         return trip;
@@ -65,6 +45,16 @@ public class Booking {
 
     public void setBookingStatus(String bookingStatus) {
         this.bookingStatus = bookingStatus;
+    }
+    
+    // Getters and Setters for id
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 

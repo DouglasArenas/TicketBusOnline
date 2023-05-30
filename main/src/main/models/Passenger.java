@@ -1,37 +1,21 @@
-package com.GoTicket.GoTicket.models;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "passenger")
+@Table(name = "passengers")
 public class Passenger {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_passenger")
-    private Long idPassenger;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "email")
     private String email;
-
-    public Long getIdPassenger() {
-        return idPassenger;
-    }
-
-    public void setIdPassenger(Long idPassenger) {
-        this.idPassenger = idPassenger;
-    }
 
     public String getName() {
         return name;
@@ -58,19 +42,24 @@ public class Passenger {
     }
 
     public void logIn() {
+        // Implementation of logIn method
     }
 
     public void logOut() {
+        // Implementation of logOut method
     }
 
     public void register() {
+        // Implementation of register method
     }
 
     public Ticket ticket() {
-        return new Ticket();
+        // Implementation of ticket method
+        return null;
     }
 
     public List<Ticket> books() {
-        return new ArrayList<Ticket>();
+        // Implementation of books method
+        return null;
     }
 }

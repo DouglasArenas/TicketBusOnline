@@ -1,22 +1,18 @@
-package com.GoTicket.GoTicket.models;
+package com.roux;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "bus")
+@Table(name = "buses")
 public class Bus {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_bus")
-    private Long idBus;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "plateNumber")
+    @Column(name = "plate_number")
     private String plateNumber;
 
     @Column(name = "capacity")
@@ -25,17 +21,9 @@ public class Bus {
     @Column(name = "model")
     private String model;
 
-    @OneToOne
-    @Column(name = "company")
+    @ManyToOne
+    @JoinColumn(name = "company_id")
     private Company company;
-
-    public Long getIdBus() {
-        return idBus;
-    }
-
-    public void setIdBus(Long idBus) {
-        this.idBus = idBus;
-    }
 
     public String getPlateNumber() {
         return plateNumber;
@@ -70,7 +58,7 @@ public class Bus {
     }
 
     public boolean checkAvailability() {
-
+        // Implementation of checkAvailability method
         return true;
     }
 }

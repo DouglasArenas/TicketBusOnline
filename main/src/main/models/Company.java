@@ -1,19 +1,11 @@
-package com.GoTicket.GoTicket.models;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "company")
+@Table(name = "companies")
 public class Company {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_company")
-    private Long idCompany;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(name = "name")
     private String name;
@@ -23,14 +15,6 @@ public class Company {
 
     @Column(name = "phone")
     private String phone;
-
-    public Long getIdCompany() {
-        return idCompany;
-    }
-
-    public void setIdCompany(Long idCompany) {
-        this.idCompany = idCompany;
-    }
 
     public String getName() {
         return name;
@@ -56,3 +40,4 @@ public class Company {
         this.phone = phone;
     }
 }
+

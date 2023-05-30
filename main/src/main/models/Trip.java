@@ -1,47 +1,30 @@
-package com.GoTicket.GoTicket.models;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "trip")
+@Table(name = "trips")
 public class Trip {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_trip")
-    private Long idTrip;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @OneToOne
-    @Column(name = "origin")
+    @ManyToOne
+    @JoinColumn(name = "origin_id")
     private City origin;
 
-    @OneToOne
-    @Column(name = "destination")
+    @ManyToOne
+    @JoinColumn(name = "destination_id")
     private City destination;
 
-    @Column(name = "departureDateTime")
+    @Column(name = "departure_date_time")
     private Date departureDateTime;
 
     @Column(name = "duration")
     private int duration;
 
-    @OneToOne
-    @Column(name = "bus")
+    @ManyToOne
+    @JoinColumn(name = "bus_id")
     private Bus bus;
-
-    public Long getIdTrip() {
-        return idTrip;
-    }
-
-    public void setIdTrip(Long idTrip) {
-        this.idTrip = idTrip;
-    }
 
     public City getOrigin() {
         return origin;
@@ -84,7 +67,9 @@ public class Trip {
     }
 
     public void assignBus() {
+        // Implementation of assignBus method
     }
 }
+
 
 
