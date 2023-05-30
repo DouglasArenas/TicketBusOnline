@@ -1,8 +1,3 @@
-package com.roux;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import javax.persistence.*;
 
 @Entity
