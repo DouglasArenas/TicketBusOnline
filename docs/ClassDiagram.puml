@@ -1,17 +1,18 @@
-@startuml PlatformUM
-
+@startuml
 '''Diagrama de clases de ticket bus online'''
 
 class Passenger {
     - name: string
     - lastName: string
     - email: string
-    - hasProfile: boolean
     + getName(): String
     + getLastName(): String
     + getEmail(): String
-    + hasProfile(): boolean
-    + bookTickets(quantity: int): void
+    + logIn(): void
+    + logOut(): void
+    + register(): void
+    + ticket(): Ticket
+    + books(): List<Ticket>
 }
 
 class Trip {
@@ -31,19 +32,6 @@ class Trip {
 class City {
     - name: String
     + getName(): String
-}
-
-class Ticket {
-    - id: int
-    - trip: Trip
-    - dateTime: Date
-    - price: double
-    + getId(): int
-    + getTrip(): Trip
-    + getDateTime(): Date
-    + getPrice(): double
-    + generateTicket(): void
-
 }
 
 class Bus {
@@ -69,20 +57,16 @@ class Company {
 }
 
 class Booking {
-    - ticket: Ticket
+    - trip: Trip
     - passengers: List<Passenger>
     - bookingStatus: String
-    + getTicket(): Ticket
+    + getTrip(): Trip
     + getPassengers(): List<Passenger>
     + getBookingStatus(): String
-    + confirmBooking(): void
-    + cancelBooking(): void
 }
 
-Ticket --> City : origin
-Ticket --> City : destination
 
-Passenger "1" *-- "n" Ticket : books
+Passenger --> Booking : books
 
 Bus --> Company : company
 
@@ -90,7 +74,6 @@ Trip --> City : origin
 Trip --> City : destination
 Trip --> Bus : bus
 
-Booking --> Ticket : ticket
-Booking --> Passenger : passengers
+Booking --> Trip
 
 @enduml
