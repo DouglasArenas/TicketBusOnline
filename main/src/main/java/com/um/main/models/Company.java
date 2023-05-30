@@ -1,3 +1,5 @@
+package com.um.main.models;
+
 import javax.persistence.*;
 
 @Entity
@@ -40,4 +42,3 @@ public class Company {
         this.phone = phone;
     }
 }
-

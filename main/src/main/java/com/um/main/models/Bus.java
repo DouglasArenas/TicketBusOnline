@@ -1,3 +1,5 @@
+package com.um.main.models;
+
 import javax.persistence.*;
 
 @Entity

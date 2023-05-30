@@ -1,3 +1,5 @@
+package com.um.main.models;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -57,4 +59,3 @@ public class Booking {
         this.id = id;
     }
 }
-

@@ -1,5 +1,7 @@
+package com.um.main.models;
+
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = "passengers")
@@ -53,13 +55,5 @@ public class Passenger {
         // Implementation of register method
     }
 
-    public Ticket ticket() {
-        // Implementation of ticket method
-        return null;
-    }
-
-    public List<Ticket> books() {
-        // Implementation of books method
-        return null;
-    }
 }
+

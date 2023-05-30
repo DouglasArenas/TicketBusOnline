@@ -1,3 +1,5 @@
+package com.um.main.models;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,5 +20,3 @@ public class City {
         this.name = name;
     }
 }
-
-
