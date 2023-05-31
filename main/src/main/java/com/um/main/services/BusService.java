@@ -1,5 +1,7 @@
 package com.um.main.services;
 
+import com.um.main.repositories.BusRepository;
+import com.um.main.models.Bus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

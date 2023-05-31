@@ -1,5 +1,7 @@
 package com.um.main.services;
 
+import com.um.main.repositories.BookingRepository;
+import com.um.main.models.Booking;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

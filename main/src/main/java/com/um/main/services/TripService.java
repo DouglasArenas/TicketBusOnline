@@ -1,5 +1,7 @@
 package com.um.main.services;
 
+import com.um.main.repositories.TripRepository;
+import com.um.main.models.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

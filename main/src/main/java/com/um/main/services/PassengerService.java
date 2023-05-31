@@ -1,5 +1,7 @@
 package com.um.main.services;
 
+import com.um.main.repositories.PassengerRepository;
+import com.um.main.models.Passenger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
