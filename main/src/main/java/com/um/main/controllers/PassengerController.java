@@ -1,5 +1,8 @@
 package com.um.main.controllers;
 
+import com.um.main.services.PassengerService;
+import com.um.main.models.Passenger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
