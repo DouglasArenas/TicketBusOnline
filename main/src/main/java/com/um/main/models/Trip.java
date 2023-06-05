@@ -2,10 +2,11 @@ package com.um.main.models;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "trips")
-public class Trip {
+public class Trip implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

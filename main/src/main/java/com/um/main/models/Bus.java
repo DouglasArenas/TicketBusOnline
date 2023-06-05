@@ -1,10 +1,12 @@
 package com.um.main.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
 
 @Entity
 @Table(name = "buses")
-public class Bus {
+public class Bus implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
