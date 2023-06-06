@@ -7,7 +7,6 @@ import com.um.main.models.Booking;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,7 +30,7 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<booking> addBooking(@RequestBody Booking booking) {
+    public ResponseEntity<Booking> addBooking(@RequestBody Booking booking) {
         Booking newBooking = bookingService.addBooking(booking);
         return new ResponseEntity<>(newBooking, HttpStatus.CREATED);
     }

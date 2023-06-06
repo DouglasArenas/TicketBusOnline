@@ -55,5 +55,8 @@ public class Passenger implements Serializable {
         // Implementation of register method
     }
 
+    public void setId(Long id2) {
+    }
+
 }
 

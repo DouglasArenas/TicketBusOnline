@@ -43,6 +43,6 @@ public class PassengerController {
    @DeleteMapping("/{id}")
    public ResponseEntity<Void> deletePassenger(@PathVariable Long id) {
       passengerService.deletePassenger(id);
-      return new ResponseEntity<>(HttpStatus.NO_CONTENT):
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
    }
 }

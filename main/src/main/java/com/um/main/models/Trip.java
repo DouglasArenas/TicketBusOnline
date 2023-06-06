@@ -72,6 +72,9 @@ public class Trip implements Serializable{
     public void assignBus() {
         // Implementation of assignBus method
     }
+
+    public void setId(Long id2) {
+    }
 }
 
 
