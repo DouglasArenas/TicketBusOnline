@@ -1,6 +1,7 @@
 package com.um.main.services;
 
 import com.um.main.repositories.BusRepository;
+import com.um.main.exceptions.BusNotFoundException;
 import com.um.main.models.Bus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class BusService {
     }
 
     public Bus getBus(Long id) {
-        return busRepository.findById(id).orElse(null);
+        return busRepository.findById(id).orElseThrow(() -> new BusNotFoundException(id));
     }
 
     public List<Bus> getAllBuses() {

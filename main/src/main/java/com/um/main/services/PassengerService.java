@@ -1,6 +1,7 @@
 package com.um.main.services;
 
 import com.um.main.repositories.PassengerRepository;
+import com.um.main.exceptions.PassengerNotFoundException;
 import com.um.main.models.Passenger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,7 @@ public class PassengerService {
     }
 
     public Passenger getPassenger(Long id) {
-        return passengerRepository.findById(id).orElse(null);
+        return passengerRepository.findById(id).orElseThrow(() -> new PassengerNotFoundException(id));
     }
 
     public List<Passenger> getAllPassengers() {
