@@ -1,5 +1,6 @@
 package com.um.main.controllers;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.um.main.services.TripService;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,6 +29,12 @@ public class TripController {
     public ResponseEntity<Trip> getTrip(@PathVariable Long id) {
         Trip trip = tripService.getTrip(id);
         return new ResponseEntity<>(trip, HttpStatus.OK);
+    }
+
+    @GetMapping("/departure_date/{departure_time}")
+    public ResponseEntity<List<Trip>> getTripsByDepartureTime(@PathVariable String departure_date) {
+        List<Trip> trips = tripService.getTripsByDepartureDate(departure_date);
+        return new ResponseEntity<>(trips, HttpStatus.OK);
     }
 
     @PostMapping

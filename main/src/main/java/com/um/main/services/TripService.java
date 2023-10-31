@@ -4,8 +4,10 @@ import com.um.main.repositories.TripRepository;
 import com.um.main.models.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Date;
 
 @Service
 public class TripService {
@@ -26,6 +28,15 @@ public class TripService {
 
     public Trip getTrip(Long id) {
         return tripRepository.findById(id).orElse(null);
+    }
+
+    public List<Trip> getTripsByDepartureDate(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM");
+        LocalDate departureDate = LocalDate.parse(date, formatter).withYear(LocalDate.now().getYear());
+
+        java.util.Date departureTime = java.sql.Date.valueOf(departureDate);
+
+        return tripRepository.findByDepartureTime(departureTime);
     }
 
     public List<Trip> getAllTrips() {

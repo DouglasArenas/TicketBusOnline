@@ -10,6 +10,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Column;
 import java.io.Serializable;
 
+import org.hibernate.annotations.Cascade;
+
 
 @Entity
 @Table(name = "buses")
@@ -29,6 +31,7 @@ public class Bus implements Serializable{
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Company company;
 
     public String getPlateNumber() {
