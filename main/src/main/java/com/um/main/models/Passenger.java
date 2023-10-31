@@ -24,6 +24,10 @@ public class Passenger implements Serializable {
     @Column(name = "email")
     private String email;
 
+    public Long getId() {
+        return id;
+    }
+    
     public String getName() {
         return name;
     }
@@ -46,21 +50,6 @@ public class Passenger implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void logIn() {
-        // Implementation of logIn method
-    }
-
-    public void logOut() {
-        // Implementation of logOut method
-    }
-
-    public void register() {
-        // Implementation of register method
-    }
-
-    public void setId(Long id2) {
     }
 
 }
