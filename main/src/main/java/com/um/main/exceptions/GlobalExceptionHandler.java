@@ -23,9 +23,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 
-    @ExceptionHandler(CityNotFoundException.class)
-    public ResponseEntity<String> handleCityNotFoundException(CityNotFoundException ex) {
+    @ExceptionHandler(ResourceNotFound.class)
+    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFound ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(IllegalArgument.class)
+    public ResponseEntity<String> handleIllegalArgument(IllegalArgument ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
 }
