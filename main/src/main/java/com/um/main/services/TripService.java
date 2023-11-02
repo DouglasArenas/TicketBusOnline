@@ -5,9 +5,9 @@ import com.um.main.models.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Date;
 
 @Service
 public class TripService {
@@ -34,7 +34,8 @@ public class TripService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM");
         LocalDate departureDate = LocalDate.parse(date, formatter).withYear(LocalDate.now().getYear());
 
-        java.util.Date departureTime = java.sql.Date.valueOf(departureDate);
+        java.util.Date utilDate = java.sql.Date.from(departureDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        java.sql.Date departureTime = new java.sql.Date(utilDate.getTime());
 
         return tripRepository.findByDepartureTime(departureTime);
     }

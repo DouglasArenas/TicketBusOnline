@@ -1,10 +1,10 @@
 package com.um.main.services;
 
 import com.um.main.repositories.CityRepository;
+import com.um.main.exceptions.CityNotFoundException;
 import com.um.main.models.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -16,8 +16,10 @@ public class CityService {
         return cityRepository.save(city);
     }
 
-    public City updateCity(City city) {
-        return cityRepository.save(city);
+    public City updateCity(Long id, City city) {
+        City existingCity = cityRepository.findById(id).orElseThrow(() -> new CityNotFoundException(id));
+        existingCity.setName(city.getName() == null ? existingCity.getName() : city.getName());
+        return cityRepository.save(existingCity);
     }
 
     public void deleteCity(Long id) {

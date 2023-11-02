@@ -2,6 +2,8 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,58 +18,27 @@ import org.hibernate.annotations.Cascade;
 @Entity
 @Table(name = "buses")
 public class Bus implements Serializable{
+
     @Id
+    @Getter @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Getter @Setter
     @Column(name = "plate_number")
     private String plateNumber;
 
+    @Getter @Setter
     @Column(name = "capacity")
     private int capacity;
 
+    @Getter @Setter
     @Column(name = "model")
     private String model;
 
     @ManyToOne
+    @Getter @Setter
     @JoinColumn(name = "company_id")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Company company;
-
-    public String getPlateNumber() {
-        return plateNumber;
-    }
-
-    public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public boolean checkAvailability() {
-        // Implementation of checkAvailability method
-        return true;
-    }
 }

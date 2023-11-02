@@ -2,6 +2,8 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,15 +18,19 @@ import java.io.Serializable;
 @Entity
 @Table(name = "bookings")
 public class Booking implements Serializable{
+
     @Id
+    @Getter @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
+    @Getter @Setter
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
     @ManyToMany
+    @Getter @Setter
     @JoinTable(
         name = "booking_passenger",
         joinColumns = @JoinColumn(name = "booking_id"),
@@ -32,40 +38,9 @@ public class Booking implements Serializable{
     )
     private List<Passenger> passengers;
 
+    @Getter @Setter
     @Column(name = "booking_status")
     private String bookingStatus;
 
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
-    }
-
-    public List<Passenger> getPassengers() {
-        return passengers;
-    }
-
-    public void setPassengers(List<Passenger> passengers) {
-        this.passengers = passengers;
-    }
-
-    public String getBookingStatus() {
-        return bookingStatus;
-    }
-
-    public void setBookingStatus(String bookingStatus) {
-        this.bookingStatus = bookingStatus;
-    }
-    
-    // Getters and Setters for id
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+   
 }

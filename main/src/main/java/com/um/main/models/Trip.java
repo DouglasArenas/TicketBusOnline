@@ -2,6 +2,8 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,81 +19,36 @@ import java.io.Serializable;
 @Entity
 @Table(name = "trips")
 public class Trip implements Serializable{
+
     @Id
+    @Getter @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "origin_id")
-    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @Getter @Setter
+    @JoinColumn(name = "origin")
     private City origin;
 
     @ManyToOne
-    @JoinColumn(name = "destination_id")
-    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
+    @Getter @Setter
+    @JoinColumn(name = "destination")
     private City destination;
 
+    @Getter @Setter
     @Column(name = "departure_time")
     private Date departureTime;
 
+    @Getter @Setter
     @Column(name = "duration")
     private int duration;
 
     @ManyToOne
+    @Getter @Setter
     @JoinColumn(name = "bus_id")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private Bus bus;
 
-    public City getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(City origin) {
-        this.origin = origin;
-    }
-
-    public City getDestination() {
-        return destination;
-    }
-
-    public void setDestination(City destination) {
-        this.destination = destination;
-    }
-
-    public Date getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public Bus getBus() {
-        return bus;
-    }
-
-    public void setBus(Bus bus) {
-        this.bus = bus;
-    }
-
-    public void assignBus() {
-        // Implementation of assignBus method
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id2) {
-    }
 }
 
 
