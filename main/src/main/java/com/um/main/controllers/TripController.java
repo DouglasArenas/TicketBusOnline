@@ -1,6 +1,5 @@
 package com.um.main.controllers;
 
-import java.sql.Date;
 import java.util.List;
 
 import com.um.main.services.TripService;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -46,7 +44,7 @@ public class TripController {
     @PutMapping("/{id}")
     public ResponseEntity<Trip> updateTrip(@PathVariable Long id, @RequestBody Trip trip) {
         trip.setId(id);
-        Trip updateTrip = tripService.updateTrip(trip);
+        Trip updateTrip = tripService.updateTrip(id, trip);
         return new ResponseEntity<>(updateTrip, HttpStatus.OK);
     }
  

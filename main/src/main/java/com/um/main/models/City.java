@@ -2,6 +2,7 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.Id;
@@ -19,6 +20,7 @@ public class City implements Serializable{
     @Getter @Setter
     private Long id;
 
+    @NotNull
     @Column(name = "name")
     @Getter @Setter
     private String name;

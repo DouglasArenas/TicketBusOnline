@@ -2,6 +2,7 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.Id;
@@ -19,14 +20,17 @@ public class Company implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Getter @Setter
     @Column(name = "name")
     private String name;
 
+    @NotNull
     @Getter @Setter
     @Column(name = "address")
     private String address;
 
+    @NotNull
     @Getter @Setter
     @Column(name = "phone")
     private String phone;

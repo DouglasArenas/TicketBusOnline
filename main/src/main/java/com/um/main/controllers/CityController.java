@@ -52,4 +52,10 @@ public class CityController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/name/{name}")
+    public ResponseEntity<City> getCityByName(@PathVariable String name) {
+        City city = cityService.getCityByName(name);
+        return new ResponseEntity<>(city, HttpStatus.OK);
+    }
+
 }

@@ -1,8 +1,6 @@
 package com.um.main.services;
 
 import com.um.main.repositories.CityRepository;
-import com.um.main.exceptions.CityNotFoundException;
-import com.um.main.exceptions.IllegalArgument;
 import com.um.main.exceptions.ResourceNotFound;
 import com.um.main.models.City;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,7 @@ public class CityService {
     private CityRepository cityRepository;
 
     public City addCity(City city) {
-        if (isNotEmpty(city)) {
+        if (IsNotEmpty.isNotEmpty(city)) {
             return cityRepository.save(city);
         }
         return null;
@@ -23,10 +21,10 @@ public class CityService {
 
     public City updateCity(Long id, City newCity) {
         City city = getCity(id);
-        if (isNotEmpty(newCity)) {
-            city.setName(newCity.getName());
+        if (IsNotEmpty.updateObject(city, newCity)) {
+            return cityRepository.save(city);
         }
-        return cityRepository.save(city);
+        return city;
     }
 
     public void deleteCity(Long id) {
@@ -42,10 +40,8 @@ public class CityService {
         return cityRepository.findAll();
     }
 
-    public boolean isNotEmpty(City city) {
-        if (city.getName() == null || city.getName().isEmpty()) {
-            throw new IllegalArgument("city");
-        }
-        return true;
+    public City getCityByName(String name) {
+        return cityRepository.findByName(name);
     }
+
 }

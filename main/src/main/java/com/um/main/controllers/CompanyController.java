@@ -43,7 +43,7 @@ public class CompanyController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Company> updateCompany(@PathVariable Long id, @RequestBody Company company) {
-        Company updatedCompany = companyService.updateCompany(company);
+        Company updatedCompany = companyService.updateCompany(id, company);
         return new ResponseEntity<>(updatedCompany, HttpStatus.OK);
     }
 

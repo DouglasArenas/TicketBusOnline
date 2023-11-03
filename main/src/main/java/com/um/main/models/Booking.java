@@ -2,6 +2,7 @@ package com.um.main.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.Id;
@@ -24,11 +25,13 @@ public class Booking implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @ManyToOne
     @Getter @Setter
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
+    @NotNull
     @ManyToMany
     @Getter @Setter
     @JoinTable(
@@ -38,6 +41,7 @@ public class Booking implements Serializable{
     )
     private List<Passenger> passengers;
 
+    @NotNull
     @Getter @Setter
     @Column(name = "booking_status")
     private String bookingStatus;
