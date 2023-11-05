@@ -32,8 +32,8 @@ public class TripController {
         return new ResponseEntity<>(trip, HttpStatus.OK);
     }
 
-    @GetMapping("/departure_date/{departure_time}")
-    public ResponseEntity<List<Trip>> getTripsByDepartureTime(@PathVariable String departure_date) {
+    @GetMapping("/departure_date")
+    public ResponseEntity<List<Trip>> getTripsByDepartureTime(@RequestBody String departure_date) {
         List<Trip> trips = tripService.getTripsByDepartureDate(departure_date);
         return new ResponseEntity<>(trips, HttpStatus.OK);
     }
