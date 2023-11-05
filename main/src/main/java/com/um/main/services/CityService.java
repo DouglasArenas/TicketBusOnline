@@ -6,6 +6,7 @@ import com.um.main.models.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CityService {
@@ -42,6 +43,14 @@ public class CityService {
 
     public City getCityByName(String name) {
         return cityRepository.findByName(name);
+    }
+
+    public City findCityByName(String name) {
+        Optional<City> city = Optional.ofNullable(cityRepository.findByName(name));
+        if (!city.isPresent()) {
+            throw new ResourceNotFound(null);
+        }
+        return city.get();
     }
 
 }

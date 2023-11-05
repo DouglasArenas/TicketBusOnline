@@ -1,5 +1,6 @@
 package com.um.main.services;
 
+import com.um.main.services.CityService;
 import com.um.main.repositories.BusRepository;
 import com.um.main.repositories.CityRepository;
 import com.um.main.repositories.TripRepository;
@@ -10,9 +11,14 @@ import com.um.main.models.Trip;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +32,9 @@ public class TripService {
 
     @Autowired
     private CityRepository cityRepository;
+
+    @Autowired
+    private CityService cityService;
 
     public Trip addTrip(Trip trip) {
         if (!IsNotEmpty.isNotEmpty(trip)) {
@@ -46,22 +55,24 @@ public class TripService {
     public Trip updateTrip(Long id, Trip newTrip) {
         Trip trip = getTrip(id);
         System.out.println("Trip found");
-        if (!IsNotEmpty.isNotEmpty(trip)) {
-            return null;
-        }
-        if (trip.getBus() == null || trip.getBus().getId() == null) {
-            return null;
-        }
-        Optional<Bus> bus = busRepository.findById(trip.getBus().getId());
-        Optional<City> origin = Optional.ofNullable(cityRepository.findByName(trip.getOrigin().getName()));
-        Optional<City> destination = Optional.ofNullable(cityRepository.findByName(trip.getDestination().getName()));
         if (IsNotEmpty.updateObject(trip, newTrip)) {
-            System.out.println("Trip saved");
+            City origin = cityService.findCityByName(newTrip.getOrigin().getName());
+            trip.setOrigin(origin);
             return tripRepository.save(trip);
         }
-        trip.setBus(bus.get());
-        trip.setOrigin(origin.get());
-        trip.setDestination(destination.get());
+        // if (trip.getBus() == null || trip.getBus().getId() == null) {
+        //     return null;
+        // }
+        // Optional<Bus> bus = busRepository.findById(trip.getBus().getId());
+        // Optional<City> origin = Optional.ofNullable(cityRepository.findByName(trip.getOrigin().getName()));
+        // Optional<City> destination = Optional.ofNullable(cityRepository.findByName(trip.getDestination().getName()));
+        // if (IsNotEmpty.updateObject(trip, newTrip)) {
+        //     System.out.println("Trip saved");
+        //     return tripRepository.save(trip);
+        // }
+        // trip.setBus(bus.get());
+        // trip.setOrigin(origin.get());
+        // trip.setDestination(destination.get());
         return tripRepository.save(trip);
     }
 
@@ -87,4 +98,5 @@ public class TripService {
     public List<Trip> getAllTrips() {
         return tripRepository.findAll();
     }
+
 }

@@ -32,12 +32,14 @@ public class Trip implements Serializable{
     @ManyToOne
     @Getter @Setter
     @JoinColumn(name = "origin")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private City origin;
 
     @NotNull
     @ManyToOne
     @Getter @Setter
     @JoinColumn(name = "destination")
+    @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private City destination;
 
     @NotNull
