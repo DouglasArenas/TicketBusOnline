@@ -44,7 +44,6 @@ public class Booking implements Serializable{
     @NotNull
     @Getter @Setter
     @Column(name = "booking_status")
-    private String bookingStatus;
-
+    private String bookingStatus;  
    
 }
