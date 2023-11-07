@@ -27,6 +27,12 @@ public class PassengerController {
       return new ResponseEntity<>(passenger, HttpStatus.OK);
    }
 
+   @GetMapping("/all")
+   public ResponseEntity<Iterable<Passenger>> getAllPassengers() {
+      Iterable<Passenger> passengers = passengerService.getAllPassengers();
+      return new ResponseEntity<>(passengers, HttpStatus.OK);
+   }
+
    @PostMapping
    public ResponseEntity<Passenger> addPassenger(@RequestBody Passenger passenger) {
       Passenger newPassenger = passengerService.addPassenger(passenger);
@@ -36,7 +42,7 @@ public class PassengerController {
    @PutMapping("/{id}")
    public ResponseEntity<Passenger> updatePassenger(@PathVariable Long id, @RequestBody Passenger passenger) {
       passenger.setId(id);
-      Passenger updatePassenger = passengerService.updatePassenger(passenger);
+      Passenger updatePassenger = passengerService.updatePassenger(id, passenger);
     return new ResponseEntity<>(updatePassenger, HttpStatus.OK);
    }
 

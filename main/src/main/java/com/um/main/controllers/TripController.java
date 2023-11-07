@@ -1,9 +1,10 @@
 package com.um.main.controllers;
 
-import java.text.ParseException;
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.um.main.services.TripService;
+import com.um.main.models.City;
 import com.um.main.models.Trip;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,12 +30,6 @@ public class TripController {
     public ResponseEntity<Trip> getTrip(@PathVariable Long id) {
         Trip trip = tripService.getTrip(id);
         return new ResponseEntity<>(trip, HttpStatus.OK);
-    }
-
-    @GetMapping("/departure_date")
-    public ResponseEntity<List<Trip>> getTripsByDepartureTime(@RequestBody String departure_date) {
-        List<Trip> trips = tripService.getTripsByDepartureDate(departure_date);
-        return new ResponseEntity<>(trips, HttpStatus.OK);
     }
 
     @PostMapping
@@ -63,4 +57,8 @@ public class TripController {
         return new ResponseEntity<>(trips, HttpStatus.OK);
     }
 
+    @GetMapping("/filter")
+    public List<Trip> filterTrips(@RequestParam String origin, @RequestParam String destination, @RequestParam String date) {
+        return tripService.getTripsByOriginAndDestinationAndDate(origin, destination, date);
+    }
 }
