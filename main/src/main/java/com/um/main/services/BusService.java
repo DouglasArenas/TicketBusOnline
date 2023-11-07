@@ -23,23 +23,25 @@ public class BusService {
         if (!IsNotEmpty.isNotEmpty(bus)) {
             return null;
         }
-
         Optional<Company> company = companyRepository.findById(bus.getCompany().getId());
-        System.out.println(company);
         if (!company.isPresent()) {
             return null;
         }
-
         bus.setCompany(company.get());
         return busRepository.save(bus);
     }
 
     public Bus updateBus(Long id, Bus newBus) {
         Bus bus = getBus(id);
-        if (!IsNotEmpty.updateObject(bus, newBus)) {
+        if (IsNotEmpty.updateObject(bus, newBus)) {
             return bus;
         }
-        return busRepository.save(bus);
+        Optional<Company> company = companyRepository.findById(bus.getCompany().getId());
+        if (!company.isPresent()) {
+            return null;
+        }
+        newBus.setCompany(company.get());
+        return busRepository.save(newBus);
     }
 
     public void deleteBus(Long id) {
@@ -48,7 +50,7 @@ public class BusService {
     }
 
     public Bus getBus(Long id) {
-        return busRepository.findById(id).orElseThrow(() -> new ResourceNotFound(id));
+        return busRepository.findById(id).orElseThrow(() -> new ResourceNotFound("Bus"));
     }
 
     public List<Bus> getAllBuses() {

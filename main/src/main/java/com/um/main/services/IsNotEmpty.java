@@ -14,11 +14,13 @@ public class IsNotEmpty {
             }
             field.setAccessible(true);
             try {
-                if (field.get(object) == null || field.get(object) == "") {
+                Object fieldObject = field.get(object);
+                if (fieldObject == null || "".equals(fieldObject) || (fieldObject instanceof Integer && (Integer) fieldObject == 0)) {
                     System.out.println("Field " + field.getName() + " is empty");
                     return false;
                 }
             } catch (IllegalAccessException e) {
+                System.out.println("Field " + field.getName() + " is empty");
                 e.printStackTrace();
             }
         }
@@ -32,7 +34,7 @@ public class IsNotEmpty {
         for (Field field : object.getClass().getDeclaredFields()) {
             field.setAccessible(true);
             try {
-                if (field.get(newObject) != null) {
+                if (field.get(newObject) != null && field.get(newObject) != "") {
                     field.set(object, field.get(newObject));
                 }
             } catch (IllegalAccessException e) {

@@ -34,7 +34,7 @@ public class CompanyService {
     }
 
     public Company getCompany(Long id) {
-        return companyRepository.findById(id).orElseThrow(() -> new ResourceNotFound(id));
+        return companyRepository.findById(id).orElseThrow(() -> new ResourceNotFound("Company"));
     }
 
     public List<Company> getAllCompanies() {
