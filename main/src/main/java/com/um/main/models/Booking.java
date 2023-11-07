@@ -1,6 +1,8 @@
 package com.um.main.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -31,7 +33,6 @@ public class Booking implements Serializable{
     @JoinColumn(name = "trip_id")
     private Trip trip;
 
-    @NotNull
     @ManyToMany
     @Getter @Setter
     @JoinTable(
@@ -44,6 +45,13 @@ public class Booking implements Serializable{
     @NotNull
     @Getter @Setter
     @Column(name = "booking_status")
-    private String bookingStatus;  
+    @Enumerated(EnumType.STRING)
+    private BookingStatus bookingStatus = BookingStatus.PENDING;  
+
+    public enum BookingStatus {
+        PENDING,
+        CONFIRMED,
+        CANCELLED
+    }
    
 }

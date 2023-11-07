@@ -11,13 +11,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Column;
-import java.util.Date;
 
 import org.hibernate.annotations.Cascade;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "trips")
@@ -46,7 +46,7 @@ public class Trip implements Serializable{
     @Getter @Setter
     @Column(name = "departure_time")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
-    private Date departureTime;
+    private Timestamp departureTime;
 
     @NotNull
     @Getter @Setter
