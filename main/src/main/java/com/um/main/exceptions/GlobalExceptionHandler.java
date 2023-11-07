@@ -8,21 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(BookingNotFoundException.class)
-    public ResponseEntity<String> handleBookingNotFoundException(BookingNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
-
-    @ExceptionHandler(PassengerNotFoundException.class)
-    public ResponseEntity<String> handlePassengerNotFoundException(PassengerNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
-
-    @ExceptionHandler(TripNotFoundException.class)
-    public ResponseEntity<String> handleTripNotFoundException(TripNotFoundException ex) {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-    }
-
     @ExceptionHandler(ResourceNotFound.class)
     public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFound ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
