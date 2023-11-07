@@ -1,0 +1,611 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "ticketBusOnline",
+    "dateExported": "2023-11-07T01:35:25.816Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "city",
+            "containerId": "",
+            "created": "2023-11-02T22:00:36.138Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "company",
+            "containerId": "",
+            "created": "2023-11-02T22:00:42.298Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "bus",
+            "containerId": "",
+            "created": "2023-11-02T22:01:08.117Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "trip",
+            "containerId": "",
+            "created": "2023-11-03T01:42:06.925Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "passenger",
+            "containerId": "",
+            "created": "2023-11-03T01:42:55.666Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "booking",
+            "containerId": "",
+            "created": "2023-11-06T21:41:35.345Z",
+            "sortNum": 80000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "fc452f02-bcda-469f-824e-37f7e424e1c9",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "get Copy",
+            "url": "http://localhost:9000/city/1",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-03T00:13:23.184Z",
+            "modified": "2023-11-03T01:38:51.491Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3ec5da7d-f365-407c-b4d0-c191dbdfb1c0",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "get Copy Copy",
+            "url": "http://localhost:9000/city/name/Mendoza",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-11-03T05:03:14.280Z",
+            "modified": "2023-11-06T19:55:14.063Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "22c680b5-4716-4d17-abc7-6200dbcc88ea",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "getAll Copy",
+            "url": "http://localhost:9000/city/all",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-03T00:13:28.048Z",
+            "modified": "2023-11-03T01:38:43.315Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d79a5e35-f5f0-4931-80e6-3e56d87821bb",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "get",
+            "url": "http://localhost:9000/company/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-03T01:39:38.042Z",
+            "modified": "2023-11-03T01:39:57.340Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2984e00b-6e86-4f5e-b9d4-7ff32208e603",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "get",
+            "url": "http://localhost:9000/bus/1",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-02T22:38:09.081Z",
+            "modified": "2023-11-03T01:22:11.512Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3006e4d7-fb1c-4e47-bc7d-d2df814a30cb",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "getAll",
+            "url": "http://localhost:9000/company/all",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-03T01:40:21.806Z",
+            "modified": "2023-11-03T01:41:50.277Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "23622e78-ff7d-4a07-8ccb-5dcff20c1945",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "get",
+            "url": "http://localhost:9000/trip/1",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-03T01:42:06.925Z",
+            "modified": "2023-11-03T05:15:14.504Z",
+            "headers": [
+                {
+                    "name": "deparureTime",
+                    "value": "10-12-2023 10:00"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9279a8e6-c610-49fc-b247-c35ec69667d6",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "get",
+            "url": "http://localhost:9000/passenger/1",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-03T01:42:55.667Z",
+            "modified": "2023-11-03T01:43:51.217Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "59251247-f677-4453-87d5-78e782fb5e81",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "get",
+            "url": "http://localhost:9000/booking/1",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-06T21:41:35.345Z",
+            "modified": "2023-11-06T23:47:44.058Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e0de0458-594e-4bcb-8a3a-d37bac224676",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "create",
+            "url": "http://localhost:9000/company",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-11-03T01:40:19.698Z",
+            "modified": "2023-11-03T03:54:25.594Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"address\":\"asd\",\n\n  \"phone\":\"asd\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a8db91c3-0e33-42d9-b1bb-eefd0c619c41",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "getAll",
+            "url": "http://localhost:9000/bus/all",
+            "method": "GET",
+            "sortNum": 26250,
+            "created": "2023-11-02T22:38:12.825Z",
+            "modified": "2023-11-03T01:25:04.307Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "59da35e8-afa1-468e-bd5a-029aa6a374de",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "getAll",
+            "url": "http://localhost:9000/trip/all",
+            "method": "GET",
+            "sortNum": 26250,
+            "created": "2023-11-03T01:42:06.926Z",
+            "modified": "2023-11-03T05:15:35.005Z",
+            "headers": [
+                {
+                    "name": "departureTime",
+                    "value": "10-12-2023 10:00"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d9a21463-eabf-4288-9194-1888de07f504",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "getAll",
+            "url": "http://localhost:9000/passenger/all",
+            "method": "GET",
+            "sortNum": 26250,
+            "created": "2023-11-03T01:42:55.668Z",
+            "modified": "2023-11-03T01:44:00.446Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c7e03f07-8f04-463b-adad-88f8851e309a",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "getAll",
+            "url": "http://localhost:9000/booking/all",
+            "method": "GET",
+            "sortNum": 26250,
+            "created": "2023-11-06T21:41:35.346Z",
+            "modified": "2023-11-06T21:42:08.521Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "605bd01e-ae5e-4d98-a230-acdb71dbc110",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "getByDate",
+            "url": "http://localhost:9000/trip/departure_date",
+            "method": "GET",
+            "sortNum": 28125,
+            "created": "2023-11-05T07:20:45.729Z",
+            "modified": "2023-11-05T22:12:45.451Z",
+            "headers": [
+                {
+                    "name": "departureTime",
+                    "value": "10-12-2023 10:00"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"departure_time\":\"10-12-2023\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fb9a9392-ed35-4306-b314-b707b1f78a0d",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "create",
+            "url": "http://localhost:9000/bus",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-02T22:38:25.907Z",
+            "modified": "2023-11-06T20:44:18.024Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"plateNumber\": \"159ÑLK\",\n  \"capacity\": 50,\n  \"model\": \"2023\",\n  \"company\":{\"id\":4}\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f47f7886-b30d-4329-95be-2360b77976f0",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "create Copy",
+            "url": "http://localhost:9000/city",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-03T00:13:35.723Z",
+            "modified": "2023-11-06T19:48:03.810Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Santa Fe\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bbd31ffb-bc09-4bb8-8703-006feceee485",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "update",
+            "url": "http://localhost:9000/company/3",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-11-03T01:40:07.777Z",
+            "modified": "2023-11-03T02:21:30.860Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \"name\":\"hola\",\n \"address\":\"sss\",\n \"asdasd\":\"\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8e08f916-70b3-4a9b-a8d6-537a2bc04af2",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "create",
+            "url": "http://localhost:9000/trip",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-03T01:42:06.927Z",
+            "modified": "2023-11-05T20:51:15.787Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"origin\": {\"name\":\"Mendoza\"},\n  \"destination\": {\"name\":\"Malargue\"},\n  \"duration\":2,\n  \"departureTime\":\"10-12-2023 02:00\",\n  \"bus\": {\"id\":1}\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "06df6820-af21-4cbd-8d34-0b4a831debf8",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "create",
+            "url": "http://localhost:9000/passenger",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-03T01:42:55.669Z",
+            "modified": "2023-11-06T20:16:50.566Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "\n  {\n    \"name\": \"Sophia\",\n    \"lastName\": \"White\",\n    \"email\": \"sophia.white@example.com\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "35725719-ef95-437b-8a4b-9f08295e4c03",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "create",
+            "url": "http://localhost:9000/booking",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-06T21:41:35.347Z",
+            "modified": "2023-11-06T22:49:33.106Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"trip\": {\"id\":1}\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dea1daff-f535-465f-902f-1c6a428ade29",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "update",
+            "url": "http://localhost:9000/bus/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-02T22:38:37.981Z",
+            "modified": "2023-11-06T21:25:40.695Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"capacity\":\"40\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "34d86b98-c450-44ff-bc7b-f8661e405ff5",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "update",
+            "url": "http://localhost:9000/city/9",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-03T01:37:32.629Z",
+            "modified": "2023-11-06T19:48:43.687Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f453afe-349e-4a14-a280-916edd101b4e",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "4e8b908e-8dcf-4894-a363-26440894fa3c",
+            "name": "delete",
+            "url": "http://localhost:9000/company/3",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-11-03T01:40:11.576Z",
+            "modified": "2023-11-03T02:21:54.994Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b9bab2c8-2e25-43d0-a963-21647411c947",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "update",
+            "url": "http://localhost:9000/trip/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-03T01:42:06.928Z",
+            "modified": "2023-11-05T06:37:58.257Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "fieldName",
+                    "value": "origin",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"origin\":{\"name\":\"Malargue\"},\n  \"destination\":{\"name\":\"Mendoza\"},\n  \"duration\":\"4\",\n  \"bus\":{\"id\":\"1\"}\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b7be3456-dac6-4a8f-8eff-d3a6fdbbdba0",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "update",
+            "url": "http://localhost:9000/passenger/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-03T01:42:55.670Z",
+            "modified": "2023-11-06T20:39:14.568Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Douglas\",\n  \"lastName\": \"Arenas\",\n  \"email\": \"d.arenas@email.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b6b711f4-897c-40b4-98bf-251ee315f634",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "update",
+            "url": "http://localhost:9000/booking/1",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-06T21:41:35.348Z",
+            "modified": "2023-11-06T21:42:19.307Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Douglas\",\n  \"lastName\": \"Arenas\",\n  \"email\": \"d.arenas@email.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "79ca48cb-389b-4107-a3da-cb2797153969",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "create passenger",
+            "url": "http://localhost:9000/booking/3/addPassengers",
+            "method": "PUT",
+            "sortNum": 45000,
+            "created": "2023-11-06T23:41:24.827Z",
+            "modified": "2023-11-07T00:10:25.043Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"passengers\":[{\"id\":2}]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c711ab5b-2fa8-47a0-9276-71bfeccff08d",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "02e25cfe-a73f-4a97-8d8c-4c6fb5419ce3",
+            "name": "delete",
+            "url": "http://localhost:9000/bus/11",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-02T22:38:46.392Z",
+            "modified": "2023-11-06T21:05:33.909Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0cae4f54-b7c2-4f78-b385-1a72d8245672",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "45984aeb-b589-4c9c-b101-34056bb02500",
+            "name": "delete",
+            "url": "http://localhost:9000/city/3",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-03T01:37:38.699Z",
+            "modified": "2023-11-06T19:44:51.535Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "706cd438-6298-4c02-a13c-0893f3664f61",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "9cd823f5-3ee9-4109-a8a2-d028626c4482",
+            "name": "delete",
+            "url": "http://localhost:9000/trip/6",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-03T01:42:06.929Z",
+            "modified": "2023-11-04T01:17:49.730Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "83e87cda-90ce-47a8-9c2c-af5366f2ce4a",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "b18c99f6-e0b2-4e31-b181-d0be220df32f",
+            "name": "delete",
+            "url": "http://localhost:9000/passenger/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-03T01:42:55.671Z",
+            "modified": "2023-11-06T20:15:11.007Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ceff2d4a-07db-4d40-b04a-7f30840a84dc",
+            "colId": "eaaa98bb-097d-4ae8-bf7d-8e2188d09d3f",
+            "containerId": "938fc203-72b5-4360-b2c7-65e711c7a42d",
+            "name": "delete",
+            "url": "http://localhost:9000/booking/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-06T21:41:35.349Z",
+            "modified": "2023-11-06T21:42:30.904Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
