@@ -1,0 +1,79 @@
+@startuml
+'''Diagrama de clases de ticket bus online'''
+
+class Passenger {
+    - name: string
+    - lastName: string
+    - email: string
+    + getName(): String
+    + getLastName(): String
+    + getEmail(): String
+    + logIn(): void
+    + logOut(): void
+    + register(): void
+    + ticket(): Ticket
+    + books(): List<Ticket>
+}
+
+class Trip {
+    - origin: City
+    - destination: City
+    - departureDateTime: Date
+    - duration: int
+    - bus: Bus
+    + getOrigin(): City
+    + getDestination(): City
+    + getDepartureDateTime(): Date
+    + getDuration(): int
+    + getBus(): Bus
+    + assingBus(): void
+}
+
+class City {
+    - name: String
+    + getName(): String
+}
+
+class Bus {
+    - plateNumber: string
+    - capacity: int
+    - model: string
+    - company: Company
+    + getPlateNumber(): String
+    + getCapacity(): int
+    + getModel(): String
+    + getCompany(): Company
+    + checkAvailability(): boolean
+}
+
+class Company {
+    - name: string
+    - address: string
+    - phone: String
+    + getName(): String
+    + getAddress(): String
+    + getPhone(): String
+
+}
+
+class Booking {
+    - trip: Trip
+    - passengers: List<Passenger>
+    - bookingStatus: String
+    + getTrip(): Trip
+    + getPassengers(): List<Passenger>
+    + getBookingStatus(): String
+}
+
+
+Passenger --> Booking : books
+
+Bus --> Company : company
+
+Trip --> City : origin
+Trip --> City : destination
+Trip --> Bus : bus
+
+Booking --> Trip
+
+@enduml
