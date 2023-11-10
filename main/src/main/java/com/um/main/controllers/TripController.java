@@ -1,10 +1,8 @@
 package com.um.main.controllers;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.um.main.services.TripService;
-import com.um.main.models.City;
 import com.um.main.models.Trip;
 
 import org.springframework.beans.factory.annotation.Autowired;
