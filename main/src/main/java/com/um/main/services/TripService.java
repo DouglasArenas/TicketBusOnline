@@ -93,8 +93,8 @@ public class TripService {
         City origin = cityService.getCityByName(originCity);
         City destination = cityService.getCityByName(destinationCity);
 
-        DateTimeFormatter formatterWithTime = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        DateTimeFormatter formatterWithoutTime = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        DateTimeFormatter formatterWithTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatterWithoutTime = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         ZonedDateTime departureDateTime;
 
         try {

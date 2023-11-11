@@ -45,7 +45,7 @@ public class Trip implements Serializable{
     @NotNull
     @Getter @Setter
     @Column(name = "departure_time")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     private Timestamp departureTime;
 
     @NotNull
